@@ -1,21 +1,31 @@
-PriorityQueue
+<h1>PriorityQueue</h1>
 
+<p>
 The PriorityQueue is a C++ implementation of a priority queue based on a linked list. It allows elements to be stored and retrieved based on their priority. The priority is determined using a user-defined comparison function.
+</p>
 
-Motivation
+<h2>Motivation</h2>
 
-The exercise's goal is to learn how to implement template classes, functors and fucntion in cpp.
+<p>
+The exercise's goal is to learn how to implement template classes, functors, and functions in C++.
+</p>
 
-Features
+<h2>Features</h2>
 
-    Insert elements into the priority queue while maintaining their order based on priority.
-    Retrieve the element with the highest priority from the priority queue.
-    Exception handling for empty priority queue.
+<ul>
+  <li>Insert elements into the priority queue while maintaining their order based on priority.</li>
+  <li>Retrieve the element with the highest priority from the priority queue.</li>
+  <li>Exception handling for an empty priority queue.</li>
+</ul>
 
-Customizing Priority Comparison
+<h2>Customizing Priority Comparison</h2>
 
-By default, the priority comparison is performed using the MyComparator struct, which subtracts the second element from the first element. However, you can customize the comparison logic by providing your own comparison function or functor. Simply modify the MyComparator struct or provide your own comparison struct and pass it as a template argument to the PriorityQueue class.
+<p>
+By default, the priority comparison is performed using the <code>MyComparator</code> struct, which subtracts the second element from the first element. However, you can customize the comparison logic by providing your own comparison function or functor. Simply modify the <code>MyComparator</code> struct or provide your own comparison struct and pass it as a template argument to the <code>PriorityQueue</code> class.
+</p>
 
-Error Handling
+<h2>Error Handling</h2>
 
-If the priority queue is empty and you try to retrieve an element using poll, a std::runtime_error exception will be thrown. Make sure to handle this exception appropriately in your code.
+<p>
+If the priority queue is empty and you try to retrieve an element using <code>poll</code>, a <code>std::runtime_error</code> exception will be thrown. Make sure to handle this exception appropriately in your code.
+</p>
