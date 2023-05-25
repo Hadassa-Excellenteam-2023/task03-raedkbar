@@ -51,14 +51,14 @@ public:
      */
     void push(const T& t) {
         if (lst.empty()) {
-            lst.push_back(t);
+            lst.push_front(t);
             return;
         }
 
         const MyComparator<T> comparator;
-        auto it = lst.begin();
-        for (; it != lst.end(); ++it) {
-            if (comparator(*it, t) < 0) {
+        auto it = lst.cbegin();
+        for (; it != lst.cend(); ++it) {
+            if (comparator(t, *it) < 0) {
                 lst.insert(it, t);
                 return;
             }
@@ -75,15 +75,15 @@ public:
      *
      * @return The highest priority element in the priority queue.
      *
-     * @throw std::runtime_error if the priority queue is empty.
+     * @throw std::out_of_range if the priority queue is empty.
      */
     T poll() {
         if (lst.empty()) {
-            throw std::runtime_error("PriorityQueue is empty.");
+            throw std::out_of_range("PriorityQueue is empty.");
         }
 
-        T element = lst.back();
-        lst.pop_back();
+        T element = lst.front();
+        lst.pop_front();
         return element;
     }
 
